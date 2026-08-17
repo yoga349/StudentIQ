@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import PredictionForm from "../components/PredictionForm";
 import PredictionResult from "../components/PredictionResult";
-import { predictPerformance } from "../services/predictionService";
+import { getPredictionHistory } from "../services/predictionService";
 
 function Prediction() {
   const [result, setResult] = useState(null);
@@ -15,7 +15,7 @@ function Prediction() {
       setError("");
       setResult(null);
 
-      const response = await predictPerformance(studentData);
+      const response = await getPredictionHistory(studentData);
 
       setResult(response);
     } catch (err) {
