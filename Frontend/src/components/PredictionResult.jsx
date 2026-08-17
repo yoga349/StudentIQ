@@ -43,7 +43,6 @@ function PredictionResult({ result }) {
   return (
     <div className="rounded-2xl border border-slate-700 bg-slate-900 p-8 shadow-xl">
 
-      {/* Header */}
       <div className="text-center">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-400">
           Predicted Final Score
@@ -60,7 +59,6 @@ function PredictionResult({ result }) {
         </div>
       </div>
 
-      {/* Performance */}
       <div
         className={`mt-8 rounded-xl border p-5 text-center ${performanceBg}`}
       >
@@ -73,7 +71,6 @@ function PredictionResult({ result }) {
         </p>
       </div>
 
-      {/* Model */}
       <div className="mt-5 rounded-xl border border-slate-800 bg-slate-800/60 p-5">
         <p className="text-sm text-slate-400">
           Machine Learning Model
@@ -88,7 +85,6 @@ function PredictionResult({ result }) {
         </p>
       </div>
 
-      {/* Status */}
       <div className="mt-5 flex items-center gap-3 rounded-xl border border-[#004f26]/20 bg-[#004f26]/5 p-4">
         <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#004f26]">
           <span className="text-sm text-white">✓</span>

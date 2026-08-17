@@ -15,8 +15,6 @@ function PredictionHistory() {
 
       setPredictions(response.data || []);
     } catch (err) {
-      console.error("History error:", err);
-
       setError(
         "Unable to load prediction history."
       );
@@ -74,10 +72,8 @@ function PredictionHistory() {
 
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-10 text-white sm:px-6 lg:px-8">
-
       <div className="mx-auto max-w-7xl">
 
-        {/* Header */}
         <div className="mb-10">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#004f26]/40 bg-[#004f26]/10 px-4 py-2 text-sm font-medium text-[#0a9b55]">
             <span className="h-2 w-2 rounded-full bg-[#0a9b55]" />
@@ -94,14 +90,12 @@ function PredictionHistory() {
           </p>
         </div>
 
-        {/* Error */}
         {error && (
           <div className="mb-6 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-400">
             {error}
           </div>
         )}
 
-        {/* Loading */}
         {loading ? (
           <div className="flex min-h-[300px] items-center justify-center rounded-2xl border border-slate-800 bg-slate-900">
             <div className="text-center">
@@ -113,7 +107,6 @@ function PredictionHistory() {
             </div>
           </div>
         ) : predictions.length === 0 ? (
-          /* Empty State */
           <div className="flex min-h-[300px] items-center justify-center rounded-2xl border border-dashed border-slate-700 bg-slate-900 p-8">
             <div className="text-center">
               <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-[#004f26]/40 bg-[#004f26]/10">
@@ -134,7 +127,6 @@ function PredictionHistory() {
           </div>
         ) : (
           <>
-            {/* Summary */}
             <div className="mb-6 grid gap-4 sm:grid-cols-3">
 
               <div className="rounded-2xl border border-slate-800 bg-slate-900 p-5">
@@ -177,7 +169,6 @@ function PredictionHistory() {
 
             </div>
 
-            {/* Desktop Table */}
             <div className="hidden overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 md:block">
 
               <div className="overflow-x-auto">
@@ -282,7 +273,6 @@ function PredictionHistory() {
               </div>
             </div>
 
-            {/* Mobile Cards */}
             <div className="space-y-4 md:hidden">
               {predictions.map((prediction) => (
                 <div

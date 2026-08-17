@@ -17,12 +17,9 @@ const getPerformanceCategory = (score) => {
   return "Needs Improvement";
 };
 
-
-
 const getRiskLevel = (score, studentData) => {
   let riskPoints = 0;
 
-  // Predicted score
   if (score < 8) {
     riskPoints += 3;
   } else if (score < 12) {
@@ -31,21 +28,18 @@ const getRiskLevel = (score, studentData) => {
     riskPoints += 1;
   }
 
-  // Previous failures
   if (studentData.failures >= 2) {
     riskPoints += 2;
   } else if (studentData.failures === 1) {
     riskPoints += 1;
   }
 
-  // Absences
   if (studentData.absences >= 15) {
     riskPoints += 2;
   } else if (studentData.absences >= 10) {
     riskPoints += 1;
   }
 
-  // Previous grades
   if (
     studentData.G1 < 8 ||
     studentData.G2 < 8
@@ -129,52 +123,38 @@ const generateRecommendations = (
   return recommendations.slice(0, 4);
 };
 
-
 export const predictPerformance = async (req, res) => {
   try {
     const studentData = req.body;
 
-    
-
-    // 1. Call ML service
     const prediction = await predictStudentPerformance(
       studentData
     );
 
-    console.log("ML prediction:", prediction);
-
-    // 2. Get predicted score
     const predictedScore = Number(
       prediction.predicted_score
     );
 
-    // Make sure prediction is valid
     if (Number.isNaN(predictedScore)) {
       throw new Error(
         "Invalid prediction received from ML service"
       );
     }
 
-    // 3. Calculate performance
     const performance =
       getPerformanceCategory(predictedScore);
 
-    // 4. Calculate risk
     const riskLevel = getRiskLevel(
       predictedScore,
       studentData
     );
 
-    // 5. Generate recommendations
     const recommendations =
       generateRecommendations(
         predictedScore,
         studentData
       );
 
-    
-
-    // 6. Save prediction to MongoDB
     const savedPrediction =
       await Prediction.create({
         inputData: {
@@ -192,18 +172,12 @@ export const predictPerformance = async (req, res) => {
           famsup: studentData.famsup,
         },
 
-        // IMPORTANT:
-        // These names must exactly match
-        // Prediction.js
         predictedScore: predictedScore,
         performance: performance,
         riskLevel: riskLevel,
         recommendations: recommendations,
       });
 
-  
-
-    // 7. Send response to frontend
     res.status(200).json({
       success: true,
 
@@ -220,7 +194,6 @@ export const predictPerformance = async (req, res) => {
       },
     });
   } catch (error) {
-
     res.status(500).json({
       success: false,
       message: error.message,

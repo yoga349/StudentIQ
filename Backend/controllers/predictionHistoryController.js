@@ -12,11 +12,6 @@ export const getPredictionHistory = async (req, res) => {
       data: predictions,
     });
   } catch (error) {
-    console.error(
-      "Prediction History Error:",
-      error.message
-    );
-
     res.status(500).json({
       success: false,
       message: "Failed to fetch prediction history",

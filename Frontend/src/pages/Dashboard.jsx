@@ -21,7 +21,6 @@ function Dashboard() {
         const response = await getPredictionHistory();
         setPredictions(response.data || []);
       } catch (error) {
-        console.error("Dashboard history error:", error);
       } finally {
         setLoading(false);
       }
@@ -52,7 +51,6 @@ function Dashboard() {
     (prediction) => prediction.riskLevel === "Low"
   ).length;
 
-  // Oldest → newest for chart
   const chartData = [...predictions]
     .reverse()
     .map((prediction, index) => ({
@@ -64,7 +62,6 @@ function Dashboard() {
     <main className="min-h-screen bg-slate-950 px-4 py-10 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
 
-        {/* Hero */}
         <section className="mb-8 rounded-3xl border border-[#004f26]/30 bg-gradient-to-br from-[#004f26]/30 via-slate-900 to-slate-950 p-8 shadow-xl sm:p-10">
           <div className="max-w-3xl">
 
@@ -89,7 +86,7 @@ function Dashboard() {
 
             <div className="mt-7 flex flex-wrap gap-3">
               <a
-                href="/"
+                href="/predict"
                 className="rounded-xl bg-[#004f26] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0a6b3a] hover:shadow-lg hover:shadow-[#004f26]/30"
               >
                 Start Prediction
@@ -105,7 +102,6 @@ function Dashboard() {
           </div>
         </section>
 
-        {/* Statistics */}
         <section className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
           <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
@@ -160,10 +156,8 @@ function Dashboard() {
 
         </section>
 
-        {/* Chart + Model Information */}
         <section className="grid gap-6 lg:grid-cols-3">
 
-          {/* Chart */}
           <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 lg:col-span-2">
 
             <div className="mb-6">
@@ -246,7 +240,6 @@ function Dashboard() {
             )}
           </div>
 
-          {/* Model Card */}
           <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
 
             <div className="mb-6">
@@ -304,7 +297,6 @@ function Dashboard() {
 
         </section>
 
-        {/* Features */}
         <section className="mt-8 grid gap-4 md:grid-cols-3">
 
           <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">

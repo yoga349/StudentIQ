@@ -116,7 +116,6 @@ function PredictionForm({ onPredict, loading }) {
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
 
-        {/* Study Time */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Weekly Study Time
@@ -138,7 +137,6 @@ function PredictionForm({ onPredict, loading }) {
           />
         </div>
 
-        {/* Previous Failures */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Previous Failures
@@ -156,7 +154,6 @@ function PredictionForm({ onPredict, loading }) {
           />
         </div>
 
-        {/* Absences */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Absences
@@ -173,7 +170,6 @@ function PredictionForm({ onPredict, loading }) {
           />
         </div>
 
-        {/* G1 */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Previous Grade G1
@@ -192,7 +188,6 @@ function PredictionForm({ onPredict, loading }) {
           />
         </div>
 
-        {/* G2 */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Previous Grade G2
@@ -211,7 +206,6 @@ function PredictionForm({ onPredict, loading }) {
           />
         </div>
 
-        {/* Mother Education */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Mother's Education
@@ -233,7 +227,6 @@ function PredictionForm({ onPredict, loading }) {
           />
         </div>
 
-        {/* Father Education */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Father's Education
@@ -255,7 +248,6 @@ function PredictionForm({ onPredict, loading }) {
           />
         </div>
 
-        {/* Higher Education */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Wants Higher Education?
@@ -272,7 +264,6 @@ function PredictionForm({ onPredict, loading }) {
           </select>
         </div>
 
-        {/* Internet */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Internet Access?
@@ -289,7 +280,6 @@ function PredictionForm({ onPredict, loading }) {
           </select>
         </div>
 
-        {/* School Support */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             School Support?
@@ -306,7 +296,6 @@ function PredictionForm({ onPredict, loading }) {
           </select>
         </div>
 
-        {/* Family Support */}
         <div>
           <label className="mb-2 block text-sm font-medium text-white">
             Family Support?
@@ -324,7 +313,6 @@ function PredictionForm({ onPredict, loading }) {
         </div>
       </div>
 
-      {/* Submit */}
       <button
         type="submit"
         disabled={loading}
