@@ -493,7 +493,7 @@ Make sure the following are installed:
 # 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/yoga349/StudentIQ.git
 cd StudentIQ
 ```
 
@@ -650,7 +650,7 @@ Create a `.env.example` file instead:
 
 ```env
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb://yp14115_db_user:jK532WBXSSbF88yS@ac-0pcdkaa-shard-00-00.o6kdlyl.mongodb.net:27017,ac-0pcdkaa-shard-00-01.o6kdlyl.mongodb.net:27017,ac-0pcdkaa-shard-00-02.o6kdlyl.mongodb.net:27017/?replicaSet=atlas-bb05kw-shard-0&ssl=true&authSource=admin
 ```
 
 Never expose:
@@ -818,12 +818,13 @@ The complete model is integrated into the StudentIQ web application through a Fa
 
 # 👨‍💻 Author
 
-**Monish Pawar**
+**Yogesh Pawar**
 
-StudentIQ was developed as an academic Machine Learning mini-project and portfolio project demonstrating the integration of Machine Learning with full-stack web development.
+StudentIQ was developed to sharpen programming skills and demonstrate the integration of Machine Learning with full-stack web development.
 
 ---
 
 # 📄 License
 
 This project is developed for educational, academic, and portfolio purposes.
+>>>>>>> b01a60e (Updated README.md)
