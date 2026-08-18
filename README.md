@@ -497,7 +497,7 @@ git clone https://github.com/yoga349/StudentIQ.git
 cd StudentIQ
 ```
 
-Replace `YOUR_GITHUB_REPOSITORY_URL` with your GitHub repository URL.
+
 
 ---
 
@@ -519,7 +519,7 @@ Create a `.env` file inside the `Backend` directory:
 
 ```env
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb://yp14115_db_user:jK532WBXSSbF88yS@ac-0pcdkaa-shard-00-00.o6kdlyl.mongodb.net:27017,ac-0pcdkaa-shard-00-01.o6kdlyl.mongodb.net:27017,ac-0pcdkaa-shard-00-02.o6kdlyl.mongodb.net:27017/?replicaSet=atlas-bb05kw-shard-0&ssl=true&authSource=admin
 ```
 
 Start the backend:
@@ -827,4 +827,4 @@ StudentIQ was developed to sharpen programming skills and demonstrate the integr
 # 📄 License
 
 This project is developed for educational, academic, and portfolio purposes.
->>>>>>> b01a60e (Updated README.md)
+
