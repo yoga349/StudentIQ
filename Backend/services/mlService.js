@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const ML_API_URL = "http://127.0.0.1:8000";
+const ML_API_URL =
+  process.env.ML_SERVICE_URL || "http://127.0.0.1:8000";
 
 export const predictStudentPerformance = async (studentData) => {
   try {
