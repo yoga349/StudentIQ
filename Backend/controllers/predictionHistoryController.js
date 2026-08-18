@@ -1,4 +1,4 @@
-import Prediction from "../models/Prediction.js";
+import Prediction from "../Models/Prediction.js";
 
 export const getPredictionHistory = async (req, res) => {
   try {

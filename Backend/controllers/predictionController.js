@@ -1,5 +1,5 @@
 import { predictStudentPerformance } from "../services/mlService.js";
-import Prediction from "../models/Prediction.js";
+import Prediction from "../Models/Prediction.js";
 
 const getPerformanceCategory = (score) => {
   if (score >= 15) {
